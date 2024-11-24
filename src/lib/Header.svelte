@@ -9,9 +9,9 @@
     <nav class="nav-bar">
         <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#mision">Misión</a></li>
+            <li><a href="#quienes_somos">¿Quiénes somos?</a></li>
             <li><a href="#valores">Valores</a></li>
-            <li><a href="#caracteristicas">Características</a></li>
+            <li><a href="#puntos_fuertes">Puntos Fuertes</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -33,6 +33,7 @@
         padding: 20px 50px;
         background-color: #fcfbf7;
         color: #fff;
+        position: relative;
     }
 
     .logo-container { flex: 0 1 auto; padding-right: 20px; }
