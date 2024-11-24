@@ -12,6 +12,7 @@
             <li><a href="#quienes_somos">¿Quiénes somos?</a></li>
             <li><a href="#valores">Valores</a></li>
             <li><a href="#puntos_fuertes">Puntos Fuertes</a></li>
+            <li><a href="#servicios">Servicios</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>

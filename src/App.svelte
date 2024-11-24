@@ -3,6 +3,8 @@
   import Footer from './lib/Footer.svelte'
   import InstagramLogo from './assets/instagramLogo.svg'
   import mailLogo from './assets/mailLogo.svg'
+  import Servicio1 from './assets/Servicio1.jpg'
+  import Servicio2 from './assets/Servicio2.jpg'
 </script>
 
 <!-- svelte-ignore a11y_invalid_attribute -->
@@ -38,6 +40,14 @@
       <li><strong>Selección de Productos de Calidad:</strong> Se trabaja con laboratorios reconocidos que garantizan productos eficaces y seguros. No se desarrollan productos propios, sino que se seleccionan aquellos que cumplen con altos estándares de calidad.</li>
       <li><strong>Asesoría Integral:</strong> El cliente puede optar por una experiencia completa, desde el diagnóstico inicial hasta la adquisición de productos, o simplemente adquirir paquetes estándar diseñados para problemas comunes.</li>
     </ul>
+  </section>
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div style="display: flex;">
+      <img src={Servicio1} alt="Servicio1" style="width: auto; height: 65vh;">
+      <img src={Servicio2} alt="Servicio1" style="width: auto; height: 65vh;">
+    </div>
   </section>
 
   <section id="contacto">
