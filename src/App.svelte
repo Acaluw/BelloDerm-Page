@@ -5,6 +5,12 @@
   import mailLogo from './assets/mailLogo.svg'
   import Servicio1 from './assets/Servicio1.jpg'
   import Servicio2 from './assets/Servicio2.jpg'
+
+  let nombre = '', apellidos = '', correo = '', asunto = '', mensaje = ''
+
+  async function SendForm() {
+    alert('Gracias por contactarnos. Hemos recibido tu mensaje y en breve nos pondremos en contacto contigo!')
+  }
 </script>
 
 <!-- svelte-ignore a11y_invalid_attribute -->
@@ -45,15 +51,43 @@
   <section id="servicios">
     <h2>Nuestros Servicios</h2>
     <div style="display: flex;">
-      <img src={Servicio1} alt="Servicio1" style="width: auto; height: 65vh;">
-      <img src={Servicio2} alt="Servicio1" style="width: auto; height: 65vh;">
+      <img src={Servicio1} alt="Servicio1" style="width: 50%; height: 50%;">
+      <img src={Servicio2} alt="Servicio1" style="width: 50%; height: 50%;">
     </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
     <p>Para más información, contáctanos a través de nuestro sitio web o redes sociales.</p>
-    <p class="redes">
+
+    <div class="form-container">
+      <form on:submit|preventDefault={SendForm}>
+        <div class="form-group">
+          <label for="nombre" style="display: none;">Nombre:</label>
+          <input type="text" id="nombre" bind:value={nombre} placeholder="Nombre" required />
+  
+          <label for="apellidos" style="display: none;">Apellidos:</label>
+          <input type="text" id="apellidos" bind:value={apellidos} placeholder="Apellidos" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="correo" style="display: none;">Correo:</label>
+          <input type="email" id="correo" bind:value={correo} placeholder="Correo electrónico" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="asunto" style="display: none;">Asunto:</label>
+          <input type="text" id="asunto" bind:value={asunto} placeholder="Asunto" required />
+        </div>
+  
+        <label for="mensaje" style="display: none;">Mensaje:</label>
+        <textarea id="mensaje" bind:value={mensaje} placeholder="Escribe tu mensaje aquí..." rows="4" required></textarea>
+  
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <p class="redes" style="padding-top: 30px;">
       <img src={mailLogo} class="logo" alt="InstagramLogo" style="height: 15px;" />
       <b>Correo:</b> bellodermcosmetologia@gmail.com
     </p>
@@ -70,7 +104,6 @@
   main { background-color: #fcfbf7; padding: 20px; }
   
   section { margin-bottom: 50px; text-align: center; }
-  
   h2 { font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #333; text-decoration: underline; }
   
   p { 
@@ -85,17 +118,20 @@
   }
 
   ul { font-family: Arial, sans-serif; color: #555; list-style-type: none; }
-  
-  li { 
-    padding-bottom: 20px; 
-    max-width: 600px;
-    line-height: 1.6;
-    word-wrap: break-word;
-    margin: 0 auto;
-    text-align: left;
-  }
+  li {  padding-bottom: 20px; max-width: 600px; line-height: 1.6; word-wrap: break-word; margin: 0 auto; text-align: left; }
 
-  .redes {
-    text-align: center;
-  }
+  .redes { text-align: center; }
+
+  #contacto { text-align: center; padding: 20px; }
+
+  .form-container { display: flex; justify-content: center; align-items: center; flex-direction: column; width: 100%; }
+  form { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; }
+
+  .form-group { display: flex; width: 100%; gap: 10px; margin-bottom: 15px; }
+  .form-group input { flex: 1; padding: 10px; width: 100%; box-sizing: border-box; }
+
+  input, textarea, button { padding: 10px; width: 100%; max-width: 800px; box-sizing: border-box; }
+
+  button { background-color: #007bff; color: #fff; border: none; cursor: pointer; margin-top: 20px; }
+  button:hover { background-color: #0056b3; }
 </style>
